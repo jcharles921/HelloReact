@@ -1,13 +1,228 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --Dark-green: #0B525B;
+  --light-orange:#F4A261;
+  --orange:#FF6700;
+  --text:white;
+  --light-text:rgba(255, 255, 255, 0.82);
+  --nav-color:#F4A261;
+  --hover-color-nav:#FF6700;
+  --hover-color-button:white;
+  --hover-color-button-text:#FF6700;
+  --invalid-color:red;
+  --big-title-56:3.5rem;
+  --line-height:0.666666667;
+  --sub-title-38:2.375rem;
+  --small-title-42:2.625rem;
+  --container-1237:77.3125rem;
+  --transition-delay-buttons:0.3s;
+  --hambourger-back-color:#E5F9E0;
+  
+  /* --sub-title-TS:2.625rem;
+  --sub-title-LH-:0.666666667; */
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html{
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,*::before,*::after{
+  box-sizing: inherit;
+}
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--Dark-green);
+  overflow-x: hidden;
+  /* color: #0B525B; */
+  margin-top: -22px;
+}
+header{
+  margin-top: 30px;
+  width: 100%;
+  
+}
+
+.container{
+  width: calc(100% - 12.5rem);
+ 
+  max-width: var(--container-1237);
+  margin-inline: auto;
+  
+}
+
+.navigation{
+  width: 100%;
+display:flex;
+flex-direction: row;
+justify-content: space-between;
+padding-left: 25px;
+padding-right: 25px;
+
+}
+.logo{
+  width: 60px;
+  height: 60px;
+
+}
+.icons{
+  display: flex;
+  
+}
+.bookslogo{
+  align-self: center;
+  margin-left: 30px;
+  width: 33.75px;
+  height:  38.57px;
+}
+.bookmark{
+  align-self: center;
+  margin-left: 10px;
+}
+
+.bookslogo:hover path{
+  fill: var(--light-orange);
+}
+.bookmark:hover path{
+  fill: var(--light-orange);
+}
+.button-container{
+  display: flex;
+flex-direction: row;
+justify-content: flex-end;
+}
+.nav_button{
+
+  width: 89px;
+  height: 41px;
+  color: var(--text);
+  background-color: var(--light-orange);
+  border-radius: 20px;
+  border: none;
+  font-size: 1.3125em;
+  line-height: 1.5625em;
+  margin-left: 12px;
+  grid-column-start: 2;
+grid-column-end: 2;
+transition: var(--transition-delay-buttons);
+}
+  
+
+.nav_button:hover{
+  background-color: white;
+  color: var(--orange);
+  transform: scale(1.08);
+  transition: var(--transition-delay-buttons);
+  cursor: pointer;
+}
+.logo{
+  margin-left: 10px;
+  width: 40px;
+}
+main{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.Login_box{
+  /* width: 450px; */
+  width: 31.250vw;
+  height: 458px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 70px;
+
+}
+.login_title{
+  font-size: 2.375em;
+  font-weight: 500;
+  margin-bottom: 35px;
+  color: var(--Dark-green);
+}
+.login_inputs{
+  display: flex;
+  flex-direction: column;
+}
+
+#password{
+  margin-top: 50px;
+}
+.login_inputs input{
+  border: none;
+  border-bottom: 1px solid var(--orange);
+
+  width: 22.778vw;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  outline: none;
+}
+.login_inputs input::placeholder{
+  color: var(--Dark-green);
+  opacity: 1;
+  font-size: 1.2625em;
+  text-align: left;
+  
+}
+.login_inputs span{
+  color: red;
+}
+.login_submit{
+  margin-top: 70px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 6px;
+  padding-left: 0px;
+}
+.login_submit button{
+  width: 145px;
+  height: 52px;
+  font-size:1.2625em ;
+  background-color: var(--Dark-green);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: var(--transition-delay-buttons);
+
+}
+.login_submit button:hover{
+  color: white;
+  background-color: var(--orange);
+  transition: var(--transition-delay-buttons);
+  transform: scale(1.08);
+  cursor: pointer;
+
+}
+.login_submit a{
+  color: var(--Dark-green);
+
+}
+.login_submit a:hover{
+  color: var(--orange);
+
+}
+.description{
+  z-index: -100;
+  position: absolute;
+  left: 96px;
+}
+.description2{
+  z-index: -99;
+position: absolute;
+left: 145px;
+}
+.booktext{
+  position: absolute;
+  color: white;
+  top: -5px;
+  left: 5px;
+  font-size: 14px;
 }
