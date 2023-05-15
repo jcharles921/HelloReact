@@ -1,11 +1,11 @@
 import {LoginBox} from "../containers/loginbox";
 import Signupbox from "../containers/signup/signupbox";
-import { BlogBox } from "../containers/blogBox";
+import  Blogcomponent  from "../containers/blogbox";
 import Notfound from "../containers/notfound";
 
 const LoginPage = () => <LoginBox/>;
 const SignupPage = () => <Signupbox/>;
-const BlogPage = () => <BlogBox/>;
+const BlogPage = () => <Blogcomponent/>;
 const NotFoundPage = () => <Notfound/>;
 
 
