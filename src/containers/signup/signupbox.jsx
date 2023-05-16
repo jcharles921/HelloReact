@@ -43,28 +43,25 @@ function validate(){
         out_user.innerHTML="Username is not valid";
     }
     if(validateEmail(email.value) && validatePassword(password.value) && password.value===confirmpass.value && userN.value.length>0){
-        console.log(email.value);
-        console.log(password.value);
-        console.log(confirmpass.value);
-        console.log(userN.value);
+        const request={
+            username:userN.value,
+            email:email.value,
+            password:password.value
+        }
+        console.log(request);
         fetch(`https://tame-puce-chipmunk-hose.cyclic.app/api/v1/Signup`,{
-            method: 'Post',
-            Headers:{
-                'Content-Type':'application/json',
-                'Accept':'application/json',
-                'Access-Control-Allow-Origin':'*'
-            },
-            body:JSON.stringify({ 
-                name:userN.value,
-                email:email.value,
-                password:password.value  
-            }),
-    
+                method: 'POST',
+                headers:{
+                            'Content-Type':'application/json',
+                        },
+                body:JSON.stringify(request),
+        
             }
-            )
+      )
             .then((response)=> response.json())
             .then((data)=>{
                 console.log(data);
+                window.location.href = "/blog";
             }
             )
             .catch((error)=>{
